@@ -56,6 +56,17 @@ export async function getNewestDocument() : Promise<Document>
     return getDocByURL(url);
 }
 
+export async function getNewestTitle() : Promise<string>
+{
+    let title : Promise<string> = new Promise<string>((resolve, reject) => 
+    {
+        getNewestDocument()
+        .then(doc => resolve(doc.title));
+    });
+
+    return title;
+}
+
 export async function getTodayURL() : Promise<string>
 {
     let document : Promise<string> = new Promise<string>((resolve, reject) =>
@@ -108,4 +119,15 @@ export async function getTodayDoc() : Promise<Document>
     let url : string = await getTodayURL();
     
     return getDocByURL(url);
+}
+
+export async function getTodayTitle() : Promise<string>
+{
+    let title : Promise<string> = new Promise<string>((resolve, reject) => 
+    {
+        getTodayDoc()
+        .then(doc => resolve(doc.title));
+    });
+
+    return title;
 }
