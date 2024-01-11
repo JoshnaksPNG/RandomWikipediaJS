@@ -1,6 +1,6 @@
 {
   "name": "randomwikipediajs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "JS package to retrieve a random wikipedia page",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
